@@ -6,14 +6,8 @@
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million,
 // find the sum of the even-valued terms.
 
-const sum = (acc, cur) => {
-  return acc + cur;
-};
-
-const fibonacci_sequence = () => {
-  let a = 1,
-    b = 1,
-    temp;
+const fibonacci_sequence = (a, b) => {
+  let temp;
   let fibs = [];
 
   while (b < 4000000) {
@@ -26,8 +20,12 @@ const fibonacci_sequence = () => {
     console.log(b);
   }
   const answer = fibs.reduce(sum);
-  console.log('answer: ', answer);
+  console.log('ANSWER: ', answer);
   return answer;
 };
 
-fibonacci_sequence();
+const sum = (acc, cur) => {
+  return acc + cur;
+};
+
+fibonacci_sequence(1, 1);
