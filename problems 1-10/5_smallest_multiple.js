@@ -5,7 +5,7 @@
 // all of the numbers from 1 to 20?
 
 const smallestMultiple = () => {
-  let value = 232783000; // i happen to know the answer is 232792560 but we can't actually iterate from 2520 to find that, this is the lowest number we can start from to use this 'brute force' approach
+  let value = 232595000; // i happen to know the answer is 232792560 but we can't actually iterate from 2520 to find that, this is the lowest number we can start from to use this 'brute force' approach
   let array = [];
   checkDivisible(value, array);
 };
@@ -27,7 +27,7 @@ const checkDivisible = (value, array) => {
     );
     return array;
   } else {
-    value++; // increase our value before the recursive call
+    value += 20; // increase our value by the upper boundary of our search range before the recursive call
     array = []; // empty the array so that we can restart the function with a new array
     checkDivisible(value, array);
   }
