@@ -27,8 +27,8 @@ const checkDivisible = (value, array) => {
     );
     return array;
   } else {
-    value++;
-    array = [];
+    value++; // increase our value before the recursive call
+    array = []; // empty the array so that we can restart the function with a new array
     checkDivisible(value, array);
   }
   return;
@@ -37,11 +37,9 @@ const checkDivisible = (value, array) => {
 const checkEqual = arr => {
   for (var i = 1; i < arr.length; i++) {
     if (arr[i] !== arr[0]) {
-      // console.log('false');
       return false;
     }
   }
-  // console.log('true');
   return true;
 };
 
