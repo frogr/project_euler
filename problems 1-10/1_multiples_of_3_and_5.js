@@ -9,15 +9,13 @@ const sum = (acc, cur) => {
 
 const multiplesOf3and5 = () => {
   const multiples = [];
-
   for (let i = 1; i < 1000; i++) {
     if (i % 3 === 0 || i % 5 === 0) {
       multiples.push(i);
     }
   }
   const answer = multiples.reduce(sum);
-
-  console.log(answer);
+  console.log(`ANSWER: ${answer}`);
   return answer;
 };
 
