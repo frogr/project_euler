@@ -4,10 +4,11 @@
 // What is the smallest positive number that is evenly divisible by
 // all of the numbers from 1 to 20?
 
-const smallestMultiple = () => {
-  let value = 232595000; // i happen to know the answer is 232792560 but we can't actually iterate from 2520 to find that, this is the lowest number we can start from to use this 'brute force' approach
+const main = () => {
+  // let value = 232595000; // i happen to know the answer is 232792560 but we can't actually iterate from 2520 to find that, this is the lowest number we can start from to use this 'brute force' approach
+  let value = 232792500;
   let array = [];
-  checkDivisible(value, array);
+  return checkDivisible(value, array);
 };
 
 const checkDivisible = (value, array) => {
@@ -20,6 +21,10 @@ const checkDivisible = (value, array) => {
     }
   }
   console.log(array);
+  return search(value, array);
+};
+
+const search = (value, array) => {
   if (checkEqual(array) === true) {
     console.log(
       'Smallest positive number evenly divisible by the range:',
@@ -27,11 +32,10 @@ const checkDivisible = (value, array) => {
     );
     return array;
   } else {
-    value += 20; // increase our value by the upper boundary of our search range before the recursive call
+    value += 5; // increase our value by the upper boundary of our search range before the recursive call
     array = []; // empty the array so that we can restart the function with a new array
-    checkDivisible(value, array);
+    return checkDivisible(value, array);
   }
-  return;
 };
 
 const checkEqual = arr => {
@@ -43,4 +47,4 @@ const checkEqual = arr => {
   return true;
 };
 
-smallestMultiple();
+main();
