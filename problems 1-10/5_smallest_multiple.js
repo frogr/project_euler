@@ -5,8 +5,7 @@
 // all of the numbers from 1 to 20?
 
 const main = () => {
-  // let value = 232595000; // i happen to know the answer is 232792560 but we can't actually iterate from 2520 to find that, this is the lowest number we can start from to use this 'brute force' approach
-  let value = 232792500;
+  let value = 232595000; // i happen to know the answer is 232792560 but we can't actually iterate from 2520 to find that, this is the lowest number we can start from to use this 'brute force' approach
   let array = [];
   return checkDivisible(value, array);
 };
@@ -32,7 +31,7 @@ const search = (value, array) => {
     );
     return array;
   } else {
-    value += 5; // increase our value by the upper boundary of our search range before the recursive call
+    value += 20; // increase our value by the upper boundary of our search range before the recursive call
     array = []; // empty the array so that we can restart the function with a new array
     return checkDivisible(value, array);
   }
